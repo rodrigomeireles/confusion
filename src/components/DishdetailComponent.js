@@ -24,15 +24,16 @@ class DishDetail extends Component {
             return (
                 <div>
                     <h4>Comments</h4>
-                    {comments.map((comment) => {
-                        return (
-                            <ul key={comment.id} className='list-unstyled'>
-                                <li>{comment.comment}</li>
-                                <li>-- {comment.author} , {this.renderDate(comment.date)}</li>
-                            </ul>
-
-                        );
-                    })}
+                    <ul className='list-unstyled'>
+                        {comments.map((comment) => {
+                            return (
+                                <li key={comment.id}>
+                                    <p>{comment.comment}</p>
+                                    <p>-- {comment.author} , {this.renderDate(comment.date)}</p>
+                                </li>
+                            );
+                        })}
+                    </ul>
                 </div>
             );
         else return <div></div>;
