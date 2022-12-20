@@ -14,6 +14,11 @@ class DishDetail extends Component {
         );
     };
 
+    renderDate(date) {
+        return new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'})
+        .format(new Date(Date.parse(date)))
+    };
+
     renderComments(comments) {
         if (comments != null) 
             return (
@@ -23,7 +28,7 @@ class DishDetail extends Component {
                         return (
                             <ul key={comment.id} className='list-unstyled'>
                                 <li>{comment.comment}</li>
-                                <li>-- {comment.author} , {comment.date}</li>
+                                <li>-- {comment.author} , {this.renderDate(comment.date)}</li>
                             </ul>
 
                         );
