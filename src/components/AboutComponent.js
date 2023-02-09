@@ -6,7 +6,7 @@ function About(props) {
 
     const leaders = props.leaders.map((leader) => {
         return (
-            <RenderLeader leader={leader} />
+            <RenderLeader key={leader.id} leader={leader} />
         );
     });
 
@@ -89,4 +89,4 @@ function About(props) {
     );
 }
 
-export default About;    
+export default About;
