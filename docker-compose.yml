@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  pretzelapp:
+    build: .
+    ports:
+      - 5000:3000
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_OPTIONS=--openssl-legacy-provider
+      - WATCHPACK_POLLING=true
+    container_name: app_pretzel
+    command: npm start

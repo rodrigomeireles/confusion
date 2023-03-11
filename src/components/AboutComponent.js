@@ -13,7 +13,7 @@ function About(props) {
     function RenderLeader({leader}) {
         return (
             <div className='row align-items-start'>
-                <Media className='col-1 m-3'>
+                <Media className='col-lg-1 m-4'>
                     <Media object src={leader.image} alt={leader.name} />
                 </Media>
                 <Media body className="col m-3">
